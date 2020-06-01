@@ -1,0 +1,8 @@
+<ul class="llistat">
+  <li *ngFor="let universitat of universitats" (click)="onSelect(universitat)">
+    <div class="content">
+      <a routerLink="universitat/{{universitat._id}}"><h3>{{universitat.name}}</h3></a>
+    </div>
+    <p>
+  </li>
+</ul>

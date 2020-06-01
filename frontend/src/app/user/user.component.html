@@ -1,0 +1,64 @@
+<div class="center">
+  <div class="tab">
+    <button class="tablinks" (click)="changeTab($event, 'datos')">Mis Datos</button>
+    <button class="tablinks" (click)="changeTab($event, 'apuntalos')">Mis Apúntalos</button>
+    <button class="tablinks" (click)="changeTab($event, 'favs')">Mis Favoritos</button>
+  </div>
+
+  <div id="datos" class="tabcontent">
+    <h3>Mis Datos</h3>
+    <table class="table table-hover">
+    <tbody>
+      <tr>
+        <td><b>Nombre</b></td>
+        <td>{{this.info.name}}</td>
+      </tr>
+      <tr>
+        <td><b>Correo</b></td>
+        <td>{{this.info.email}}</td>
+      </tr>
+      <tr>
+        <td><b>Universidad</b></td>
+        <td>{{this.uni}}</td>
+      </tr>
+      <tr>
+        <td><b>Carrera</b></td>
+        <td>{{this.carrera}}</td>
+      </tr>
+      <tr>
+        <td><b>ApuntaCoins</b></td>
+        <td>{{this.balance}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button type="button" class="btn btn-success" (click)="showForm($event)"><i class="fas fa-coins"></i> Añadir Saldo</button>
+    <div class="addBalance">
+        <form class="formBox" [formGroup]="addBalance" (ngSubmit)="onSubmit(addBalance.value)">
+          <div class="form-group">
+         <label for="name"> Cantidad:</label>
+         <input type="name" class="form-control" formControlName="cantidad" id="cantidad">
+          </div>
+       <button type="submit" class="btn btn-primary">Añadir ApuntaCoins</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="apuntalos" class="tabcontent">
+    <h3>Mis Apúntalos</h3>
+    <table class="table table-hover">
+    <tbody>
+      <tr *ngFor="let post of this.info.posts">
+        <td><a routerLink="/documento/{{post._id}}"><b>{{post.title}}</b></a></td>
+        <td><i class="fas fa-thumbs-up"></i> {{post.meta.votes}}</td>
+        <td><i class="fas fa-heart"></i> {{post.meta.favs}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div id="favs" class="tabcontent">
+    <h3>Mis Favoritos</h3>
+    <p>no disponible</p>
+  </div>
+</div>

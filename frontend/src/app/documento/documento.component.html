@@ -1,0 +1,35 @@
+<div class="newFile" *ngIf="this.esAutor">
+  <button type="button" class="btn btn-success" (click)="this.router.navigate(['edit/'+this.id]);"><i class="fas fa-pencil-alt"></i> Editar</button>
+  <p></p><button type="button" class="btn btn-success" (click)="this.router.navigate(['datos/'+this.id]);"><i class="fas fa-file"></i> Editar Datos</button>
+  <p></p><button type="button" class="btn btn-success" (click)="showForm($event)"><i class="fas fa-user-plus"></i> Añadir Participante</button><p>
+  <div class="newParticipant" *ngIf="this.esAutor">
+    <form class="formBox" [formGroup]="addParticipant" (ngSubmit)="onSubmit(addParticipant.value)">
+     <div class="form-group">
+       <label for="name">Usuario:</label>
+       <input type="name" class="form-control" formControlName="name" id="name">
+     </div>
+     <button type="submit" class="btn btn-primary">Añadir</button>
+    </form>
+  </div>
+</div>
+<div class="newFile" *ngIf="this.esEditor">
+  <button type="button" class="btn btn-success" (click)="this.router.navigate(['edit/'+this.id]);"><i class="fas fa-pencil-alt"></i> Editar</button>
+</div>
+<div class="newFile" *ngIf="!this.esAutor && !this.esEditor">
+  <button type="button" class="btn btn-danger" (click)="comprar()"><i class="fas fa-shopping-cart"></i> Comprar</button>
+</div>
+<div class="docu">
+  <div class="cgrid">
+  <div class="row">
+    <div class="col"><h3>{{document.title}}</h3></div>
+  </div>
+  <div class="row">
+      <div class="col">{{document.body}}</div>
+  </div>
+  <div class="row">
+    <div class="col"><i class="fas fa-user-edit"></i> Creado por {{document.creator.username}}</div>
+    <div class="col"><i class="fas fa-heart"></i> Favoritos: {{document.meta.favs}}</div>
+        <div class="col"><i class="fas fa-coins"></i> Precio: {{document.price}}</div>
+  </div>
+  </div>
+</div>

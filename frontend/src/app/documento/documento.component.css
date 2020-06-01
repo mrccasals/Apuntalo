@@ -1,0 +1,37 @@
+.docu{
+  padding-top: 5%;
+  padding-left: 35%;
+  width: 75%;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  text-align: center;
+}
+.row{
+  padding: 10%;
+}
+.cgrid{
+  border-radius: 5px;
+
+  background: rgb(249,249,249);
+  background: linear-gradient(90deg, rgba(249,249,249,1) 35%, rgba(251,228,228,0.6355275386521797) 100%);
+  box-shadow: 10px 7px 37px -24px rgba(0,0,0,0.75);
+}
+
+.newFile{
+  float: right;
+  padding-top: 2%;
+  padding-right: 5%;
+  width: 20%;
+}
+
+.newParticipant{
+  display: none;
+  border-radius: 5px;
+
+  background: rgb(249,249,249);
+  background: linear-gradient(90deg, rgba(249,249,249,1) 35%, rgba(251,228,228,0.6355275386521797) 100%);
+  box-shadow: 10px 7px 37px -24px rgba(0,0,0,0.75);
+}
+
+.formBox{
+  padding: 5%;
+}
